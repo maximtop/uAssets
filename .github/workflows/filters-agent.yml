@@ -50,6 +50,9 @@ jobs:
                   llmApiKey: ${{ secrets.FILTERS_AGENT_LLM_API_KEY }}
                   llmModel: deepseek/deepseek-v4.1-flash
                   llmVisionModel: deepseek/deepseek-v4.1-flash
+                  # Plain config: OpenRouter routing preferences sent as the request's `provider`
+                  # object. Together faulted mid-stream for hours on 2026-09-15, so it is skipped.
+                  llmProviderRouting: '{"ignore":["Together"]}'
                   # The label event carries the issue number directly; a manual dispatch carries it
                   # as the issueNumber input instead.
                   issueNumber: ${{ github.event.issue.number || inputs.issueNumber }}
